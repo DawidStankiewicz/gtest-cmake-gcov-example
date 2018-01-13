@@ -1,19 +1,31 @@
-file(GLOB SRCS *.cpp)
+##############
+# Unit Tests
+##############
+add_executable( testFoo 
+    main.cpp
+    mockbar.h
+    testfoo.cpp
+    testfoo.h
+    )
 
-ADD_EXECUTABLE(testfoo ${SRCS})
-
-#link_directories(
-#    gtest/export/lib/x86_64-linux-gnu/
-#    )
-TARGET_LINK_LIBRARIES(testfoo
+target_link_libraries( testFoo ${GTEST_LIBRARIES} )
+target_link_libraries( testFoo
     libfoo
-    ${GTEST_LIBRARIES}
-    #gtest gtest_main
-    #gmock   gmock_main
-    #-pthread
-    #libgtest
-    #libgmock
-)
+    )
 
-add_test(NAME testfoo
-         COMMAND testfoo)
+add_test(NAME that-I-can-do_for_just_test COMMAND testFoo )
+
+## Standard linking to gtest stuff.
+#target_link_libraries(runUnitTests gtest gtest_main)
+#
+## Extra linking for the project.
+#target_link_libraries(runUnitTests project1_lib)
+#
+## This is so you can do 'make test' to see all your tests run, instead of
+## manually running the executable runUnitTests to see those specific tests.
+#add_test(NAME that-test-I-made COMMAND runUnitTests)
+#
+## You can also omit NAME and COMMAND. The second argument could be some other
+## test executable.
+#add_test(that-other-test-I-made runUnitTests)
+
