@@ -13,7 +13,15 @@ target_link_libraries( testFoo
     libfoo
     )
 
-add_test(NAME that-I-can-do_for_just_test COMMAND testFoo )
+#add_test(NAME that-I-can-do_for_just_test COMMAND testFoo )
+#include( ../../cmake/CodeCoverage.cmake )
+SETUP_TARGET_FOR_COVERAGE(
+    coverage_testFoo  # Name for custom target.
+    testFoo         # Name of the test driver executable that runs the tests.
+    # NOTE! This should always have a ZERO as exit code
+    # otherwise the coverage generation will not complete.
+    coverage_testFoo_dir            # Name of output directory.
+    )
 
 ## Standard linking to gtest stuff.
 #target_link_libraries(runUnitTests gtest gtest_main)

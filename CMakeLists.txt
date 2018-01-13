@@ -77,7 +77,13 @@ if (test)
 
   SET( GTEST_LIBRARIES gtest gtest_main gmock gmock_main )
 
+
+  include( cmake/CodeCoverage.cmake )
+  SET(CMAKE_CXX_FLAGS "-g -O0 --coverage -fprofile-arcs -ftest-coverage")
+  SET(CMAKE_C_FLAGS "-g -O0 --coverage -fprofile-arcs -ftest-coverage")
+
   add_subdirectory( test )
+
   ###############
   ## Unit Tests
   ###############
