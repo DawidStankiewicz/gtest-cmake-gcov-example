@@ -1,4 +1,10 @@
-A sample project illustrating how to perform unit testing with GoogleTest and CMake
+A sample project illustrating how to perform unit testing with GoogleTest and CMake and Gcov
+
+##ManyThanks
+Thanks to 
+1. https://github.com/pyarmak/cmake-gtest-coverage-example.git
+2. https://github.com/kaizouman/gtest-cmake-example.git
+3. https://github.com/dmonopoly/gtest-cmake-example.git
 
 ##Building
 
