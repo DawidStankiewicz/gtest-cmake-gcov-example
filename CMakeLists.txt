@@ -76,6 +76,7 @@ if (test)
   include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
   SET( GTEST_LIBRARIES gtest gtest_main gmock gmock_main )
+  SET( CMAKE_BUILD_TYPE Debug )
 
 
   include( cmake/CodeCoverage.cmake )
