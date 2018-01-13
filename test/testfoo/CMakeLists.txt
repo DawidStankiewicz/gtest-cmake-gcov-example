@@ -1,26 +1,28 @@
 ##############
 # Unit Tests
 ##############
-add_executable( testFoo 
+set( BIN_NAME testFoo )
+
+add_executable( ${BIN_NAME} 
     main.cpp
     mockbar.h
     testfoo.cpp
     testfoo.h
     )
 
-target_link_libraries( testFoo ${GTEST_LIBRARIES} )
-target_link_libraries( testFoo
+target_link_libraries( ${BIN_NAME} ${GTEST_LIBRARIES} )
+target_link_libraries( ${BIN_NAME}
     libfoo
     )
 
 #add_test(NAME that-I-can-do_for_just_test COMMAND testFoo )
 #include( ../../cmake/CodeCoverage.cmake )
 SETUP_TARGET_FOR_COVERAGE(
-    coverage_testFoo  # Name for custom target.
-    testFoo         # Name of the test driver executable that runs the tests.
+    coverage_${BIN_NAME}  # Name for custom target.
+    ${BIN_NAME}         # Name of the test driver executable that runs the tests.
     # NOTE! This should always have a ZERO as exit code
     # otherwise the coverage generation will not complete.
-    coverage_testFoo_dir            # Name of output directory.
+    coverage_${BIN_NAME}_dir            # Name of output directory.
     )
 
 ## Standard linking to gtest stuff.
