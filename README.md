@@ -1,12 +1,12 @@
-A sample project illustrating how to perform unit testing with GoogleTest and CMake and Gcov
+# A sample project illustrating how to perform unit testing with GoogleTest and CMake and Gcov
 
-##ManyThanks
+## ManyThanks
 Thanks to 
 1. https://github.com/pyarmak/cmake-gtest-coverage-example.git
 2. https://github.com/kaizouman/gtest-cmake-example.git
 3. https://github.com/dmonopoly/gtest-cmake-example.git
 
-##Building
+## Building
 
 ~~~
 mkdir build
@@ -15,7 +15,7 @@ cmake .. -DCMAKE_BUILD_TYPE=Debug ..  -Dtest=ON
 make
 ~~~
 
-##Running
+## Running
 
 ~~~
 cd build && make test
@@ -28,7 +28,7 @@ or
 build/test/testfoo/testfoo
 ~~~
 
-##Editing
+## Editing
 1. Add testcode
     mkdir new testXXX folder under test, maybe you just copy one from testfoo
     add new line: "add_subdirectory(testXXX)" in test/CMakeLists.txt
